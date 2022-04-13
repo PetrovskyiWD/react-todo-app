@@ -1,12 +1,11 @@
 import { FC } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
 
-import { RootState } from '../store';
 import { toggleTodo } from '../store/todos/todosSlice';
+import { useAppSelector, useAppDispatch } from '../hooks'
 
 const Home: FC = () => {
-  const { list } = useSelector((state: RootState) => state.todos);
-  const dispatch = useDispatch();
+  const { list } = useAppSelector(state => state.todos);
+  const dispatch = useAppDispatch();
 
   return (
     <ul>
