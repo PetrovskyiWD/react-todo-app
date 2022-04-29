@@ -31,7 +31,7 @@ export const todosSlice = createSlice({
         if (todo.id === action.payload) todo.isCompleted = !todo.isCompleted;
 
         return todo;
-      })
+      });
     }
   }
 });
