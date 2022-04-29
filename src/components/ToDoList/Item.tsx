@@ -9,10 +9,10 @@ const Item: React.FC<ITodo> = ({ id, title, details, isCompleted }) => {
       <div className='grow flex items-center'>
         <button
           type='button'
-          className={`check-button mr-3 text-xs text-white border-2 border-blue-500 ${isCompleted && 'bg-blue-500'}`}
+          className={`w-5 h-5 check-button mr-3 text-xs border-2 border-blue-500 ${isCompleted && 'bg-blue-500'}`}
           onClick={() => dispatch(toggleTodo(id))}
         >
-          &#10003;
+          <span className={`text-white ${!isCompleted && 'hidden'}`}>&#10003;</span>
         </button>
         <div style={{ textDecoration: isCompleted ? 'line-through' : 'none' }}>
           <span>{title}: </span>
