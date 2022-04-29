@@ -19,10 +19,9 @@ const Item: React.FC<ITodo> = ({ id, title, details, isCompleted }) => {
           <span>{details}</span>
         </div>
       </div>
-      <div>
-        <button type='button' className='text-green-500'>Edit</button>
-        <span> | </span>
-        <button type='button' className='text-red-500'>Delete</button>
+      <div className='flex items-center'>
+        <button type='button' className='w-6 h-6 mr-2 text-green-500 bg-gray-200'>&#9998;</button>
+        <button type='button' className='w-6 h-6 text-red-500 bg-gray-200'>&#10008;</button>
       </div>
     </li>
   )
