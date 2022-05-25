@@ -8,8 +8,8 @@ const Home: React.FC = () => {
           <h1 className='text-2xl'>My App</h1>
         </div>
       </header>
-      <div className='mt-4 grow'>
-        <div className="container mx-auto">
+      <div className='grow'>
+        <div className="container my-2 mx-auto">
           <ToDoList />
         </div>
       </div>

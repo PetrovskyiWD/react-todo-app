@@ -5,7 +5,7 @@ const Item: React.FC<ITodo> = ({ id, title, details, isCompleted }) => {
   const dispatch = useAppDispatch();
 
   return (
-    <li className='w-2/3 p-4 flex border border-blue-500'>
+    <li className='w-2/3 p-4 my-2 flex border border-blue-500'>
       <div className='grow flex items-center'>
         <button
           type='button'
