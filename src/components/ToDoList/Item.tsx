@@ -1,5 +1,5 @@
 import { useAppDispatch } from '../../hooks';
-import { ITodo, toggleTodo } from '../../store/todos/todosSlice';
+import { ITodo, toggleTodo, deleteTodo } from '../../store/todos/todosSlice';
 
 const Item: React.FC<ITodo> = ({ id, title, details, isCompleted }) => {
   const dispatch = useAppDispatch();
@@ -20,8 +20,14 @@ const Item: React.FC<ITodo> = ({ id, title, details, isCompleted }) => {
         </div>
       </div>
       <div className='flex items-center'>
-        <button type='button' className='w-6 h-6 mr-2 text-green-500 bg-gray-200'>&#9998;</button>
-        <button type='button' className='w-6 h-6 text-red-500 bg-gray-200'>&#10008;</button>
+        <button type='button' className='w-6 h-6 mr-2 text-green-500 bg-gray-200 hover:bg-green-200'>&#9998;</button>
+        <button
+          type='button'
+          className='w-6 h-6 text-red-500 bg-gray-200 hover:bg-red-200'
+          onClick={() => dispatch(deleteTodo(id))}
+        >
+          &#10008;
+        </button>
       </div>
     </li>
   )

@@ -26,19 +26,22 @@ export const todosSlice = createSlice({
   name: 'todos',
   initialState,
   reducers: {
-    addTodo: (state: TodosState, action: PayloadAction<ITodo>) => {
-      state.list.push(action.payload)
-    },
     toggleTodo: (state: TodosState, action: PayloadAction<number>) => {
       state.list.map((todo: ITodo) => {
         if (todo.id === action.payload) todo.isCompleted = !todo.isCompleted;
 
         return todo;
       });
+    },
+    createTodo: (state: TodosState, action: PayloadAction<ITodo>) => {
+      state.list.push(action.payload)
+    },
+    deleteTodo: (state: TodosState, action: PayloadAction<number>) => {
+      state.list = state.list.filter(item => item.id !== action.payload)
     }
   }
 });
 
-export const { addTodo, toggleTodo } = todosSlice.actions;
+export const { toggleTodo, createTodo, deleteTodo } = todosSlice.actions;
 
 export default todosSlice.reducer;
