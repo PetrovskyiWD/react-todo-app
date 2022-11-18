@@ -1,7 +1,7 @@
 import { useAppDispatch } from '../../hooks';
 import { ITodo, toggleTodo, deleteTodo } from '../../store/todos/todosSlice';
 
-const Item: React.FC<ITodo> = ({ id, title, details, isCompleted }) => {
+const Item: React.FC<ITodo> = ({ id, title, details, isCompleted }: ITodo) => {
   const dispatch = useAppDispatch();
 
   return (
